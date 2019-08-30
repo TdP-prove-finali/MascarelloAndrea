@@ -1,4 +1,5 @@
 Il Teatrino - Spazio per corsi
+
 L'applicazione risolve un problema di gestione dati di un libero professionista che offre corsi di teatro! Sarà inoltre possibile pianificare l'orario settimanale dei corsi per massimizzare il profitto.
 
 Istruzioni per l'installazione e l'utilizzo dell' applicazione:
