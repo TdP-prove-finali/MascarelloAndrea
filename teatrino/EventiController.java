@@ -7,6 +7,7 @@ import java.util.ResourceBundle;
 
 import it.polito.tdp.teatrino.db.TeatrinoDAO;
 import it.polito.tdp.teatrino.model.ClienteHidden;
+import it.polito.tdp.teatrino.model.Evento;
 import it.polito.tdp.teatrino.model.Model;
 import javafx.stage.Stage;
 import javafx.collections.FXCollections;
