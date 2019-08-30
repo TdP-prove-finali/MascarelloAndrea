@@ -11,5 +11,5 @@ Istruzioni per l'installazione e l'utilizzo dell' applicazione:
   • All' interno della classe ConnectDB modificare la password di accesso al database immettendo la propria.
 
   • Aprire il progetto con Eclipse e lanciare la classe Main per avviare l'applicazione.
-
+========
 Link al video dimostrativo: 
