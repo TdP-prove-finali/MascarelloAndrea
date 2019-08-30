@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #830206;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polito.tdp.teatrino.VisualizzaClientiController">
+   <center>
+      <VBox prefHeight="200.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox prefHeight="80.0" prefWidth="600.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="300.0">
+                     <children>
+                        <Label alignment="TOP_LEFT" contentDisplay="CENTER" text="NOME : " textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="300.0" style="-fx-border-color: white;">
+                     <children>
+                        <Label fx:id="labelNome" text="Label" textFill="WHITE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="80.0" prefWidth="600.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="300.0">
+                     <children>
+                        <Label text="CORSO : " textFill="WHITE">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="300.0" style="-fx-border-color: white;">
+                     <children>
+                        <Label fx:id="labelCorso" text="Label" textFill="WHITE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+            <HBox prefHeight="80.0" prefWidth="600.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="300.0">
+                     <children>
+                        <Label text="CONTATTI : " textAlignment="CENTER" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="300.0" style="-fx-border-color: white;">
+                     <children>
+                        <Label fx:id="labelContatti" text="Label" textFill="WHITE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+            <HBox prefHeight="80.0" prefWidth="600.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="300.0">
+                     <children>
+                        <Label alignment="TOP_LEFT" contentDisplay="CENTER" text="DEBITO : " textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="300.0" style="-fx-border-color: white;">
+                     <children>
+                        <Label fx:id="labelDebito" text="Label" textFill="WHITE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+   <bottom>
+      <HBox prefHeight="101.0" prefWidth="600.0" style="-fx-border-color: white;" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="300.0">
+               <children>
+                  <Button fx:id="btnPaga" mnemonicParsing="false" onAction="#paga" style="-fx-background-color: black; -fx-cursor: hand;" text="PAGAMENTO" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="300.0">
+               <children>
+                  <Button fx:id="btnElimina" mnemonicParsing="false" onAction="#elimina" style="-fx-background-color: black; -fx-cursor: hand;" text="ELIMINA CLIENTE" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </HBox>
+   </bottom>
+</BorderPane>
