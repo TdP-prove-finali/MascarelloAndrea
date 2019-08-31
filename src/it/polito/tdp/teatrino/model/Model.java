@@ -9,6 +9,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.sun.corba.se.impl.ior.GenericTaggedComponent;
+
 import it.polito.tdp.teatrino.model.Evento;
 import it.polito.tdp.teatrino.db.TeatrinoDAO;
 
@@ -85,6 +87,7 @@ public class Model {
 		// TODO Auto-generated method stub
 		best = new ArrayList<Corso>();
 		List<Corso> partial = new ArrayList<Corso>();
+		settimana.clear();
 		
 		settimana.add(new Giorno("Lunedì", lunediI, lunediF));
 		settimana.add(new Giorno("Martedì", martediI, martediF));
@@ -121,7 +124,7 @@ public class Model {
 		for (Corso corso : corsiMap.values()) {
 			
 			if(!partial.contains(corso)) {
-			Giorno gg = cercaGiorno(corso,sett);
+			Giorno gg = cercaGiorno(corso,sett,partial);
 			if(gg != null) {
 			Corso c = new Corso(corso.getId(), corso.getNome(), corso.getCosto(), corso.getDip1(), 
 					corso.getDip2(), gg.nome, gg.oraI, gg.oraI.plus(Duration.between(corso.getOraInizio(), corso.getOraFine())), 
@@ -133,7 +136,7 @@ public class Model {
 					corso.getDip2(), gg.nome, gg.oraI, gg.oraI.plus(Duration.between(corso.getOraInizio(), corso.getOraFine())), 
 					corso.getTipo()).toStringRicorsiva());
 			if(gg.getOraI().plus(Duration.between(corso.getOraInizio(), corso.getOraFine())).compareTo(gg.oraF) <= 0 ) {
-				gg.setOraI(Duration.between(corso.getOraInizio(), corso.getOraFine()));
+			gg.setOraI(Duration.between(corso.getOraInizio(), corso.getOraFine()));
 			}
 			gg.disponibilita(Duration.between(corso.getOraInizio(), corso.getOraFine()).toMinutes());
 			for (Corso corso2 : partial) {
@@ -150,12 +153,24 @@ public class Model {
 		}
 	}
 
-	private Giorno cercaGiorno(Corso corso, List<Giorno> sett) {
+	private Giorno cercaGiorno(Corso corso, List<Giorno> sett, List<Corso> partial) {
 		// TODO Auto-generated method stub
 		for(Giorno giorno : sett) {
+			
+			boolean err = false;
+			
+			for(Corso c : partial) {
+				
+				
+				if(c.getGg().nome.equals(giorno.getNome()) && c.getOraInizio().equals(giorno.getOraI()))
+					err = true;
+				
+			}
+			
+			if(err == false) {
 
 			if(!giorno.corsi.contains(corso.getId())) {
-			if(giorno.getOraI().plus(Duration.between(corso.getOraInizio(), corso.getOraFine())).compareTo(giorno.oraF) <= 0  && 
+			if(!giorno.getOraI().equals(giorno.getOraF()) && giorno.getOraI().plus(Duration.between(corso.getOraInizio(), corso.getOraFine())).compareTo(giorno.oraF) <= 0  && 
 					!dipendentiMap.get(corso.getDip1()).getGiorno().equals(giorno.nome) && giorno.getOraI().compareTo(LocalTime.of(7, 00)) >= 0 &&
 					giorno.getOraI().compareTo(LocalTime.of(23, 00)) <= 0) {
 				if(dipendentiMap.get(corso.getDip2()) != null) {
@@ -167,6 +182,7 @@ public class Model {
 				}
 			}
 			
+		}
 		}
 		}
 		return null;
