@@ -12,4 +12,4 @@ L'applicazione risolve un problema di gestione dati di un libero professionista 
 
     4.Aprire il progetto con Eclipse e lanciare la classe Main per avviare l'applicazione.
 #
-Link al video dimostrativo: 
+Link al video dimostrativo: https://youtu.be/pLvPllKYWZc
